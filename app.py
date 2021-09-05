@@ -88,6 +88,7 @@ def predict():
         transmission_Manual = int(request.form['Transmission_Manual'])
         
         prediction=model.predict([[year,km_driven,present_price,fuel_Diesel,fuel_Electric,fuel_LPG,fuel_Petrol,seller_type_Individual,seller_type_Trustmark_Dealer,transmission_Manual,owner_Fourth_Above_Owner,owner_Second_Owner,owner_Test_Drive_Car,owner_Third_Owner]])
+        
         output=round(prediction[0],2)  
         
         if output<0:
